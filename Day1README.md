@@ -1,7 +1,7 @@
 # Quest-Submissions-Emerald-City
 
 
-Day 1 Quest 
+# Day 1 Quest 
 
 1. The blockchain is a system in which packets of data are stored and verified through a secure system of verificaiton by validators. 
 
