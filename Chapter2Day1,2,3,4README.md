@@ -28,3 +28,11 @@
 <img width="1272" alt="forced" src="https://user-images.githubusercontent.com/105934102/182004851-175ea1d0-2825-45e5-8b22-bee1798a0be6.png">
 <img width="1270" alt="nil" src="https://user-images.githubusercontent.com/105934102/182004867-97bebaa9-6062-40f8-ad96-2b1027db2358.png">
 4. So the function states that we should represent strings ONLY. However, the second line represents that we could either have a string OR an address. This would be an "optional", so this is why the error states "String?". It is because we are trying to put an optional type in a function that is only supposed to represent Strings only. We can fix this by removing the Addresses. 
+
+
+# Day 4
+1,2,3.  <img width="1276" alt="1" src="https://user-images.githubusercontent.com/105934102/182008236-be789f72-8482-4f6c-b04b-512b37a80bad.png">
+<img width="1273" alt="2" src="https://user-images.githubusercontent.com/105934102/182008237-feb9c6fc-359f-49b4-a0de-8dd41cc28af1.png">
+
+4. <img width="1276" alt="transaction" src="https://user-images.githubusercontent.com/105934102/182008456-a69e1c87-689b-4d36-93a9-a288c5922f20.png">
+5. <img width="1280" alt="struct" src="https://user-images.githubusercontent.com/105934102/182008587-3c5fd997-9c92-45b9-8f7d-25f05a3e627f.png">
