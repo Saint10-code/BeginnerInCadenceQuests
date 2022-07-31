@@ -21,3 +21,10 @@
 
 
 # Day 3
+
+1. <img width="1280" alt="favorite people" src="https://user-images.githubusercontent.com/105934102/182004658-d2334270-bdad-4957-8d0c-474d752f91a8.png">
+2. <img width="1278" alt="socials" src="https://user-images.githubusercontent.com/105934102/182004663-9bb518bb-0c6f-4a15-a445-5648d3283168.png">
+3. The force unwrap operator takes away an optional type and returns just the type. An optional type could either be, for example "A string, or nil". The forced unwrapped operater takes away this option of "nil" and just returns the "string". I will explain this using a forced unwrapped operator to log an integer. 
+<img width="1272" alt="forced" src="https://user-images.githubusercontent.com/105934102/182004851-175ea1d0-2825-45e5-8b22-bee1798a0be6.png">
+<img width="1270" alt="nil" src="https://user-images.githubusercontent.com/105934102/182004867-97bebaa9-6062-40f8-ad96-2b1027db2358.png">
+4. So the function states that we should represent strings ONLY. However, the second line represents that we could either have a string OR an address. This would be an "optional", so this is why the error states "String?". It is because we are trying to put an optional type in a function that is only supposed to represent Strings only. We can fix this by removing the Addresses. 
