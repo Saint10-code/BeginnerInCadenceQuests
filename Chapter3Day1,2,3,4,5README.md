@@ -12,3 +12,9 @@
     let myJacob <- create Jacob() (if you want to move a resource, you need the <- symbol and the word "create)
     return myJacob (doesn't have the <- symbol)
     
+
+# Day 2
+
+1. <img width="1276" alt="array of birth" src="https://user-images.githubusercontent.com/105934102/182010507-4e7240ac-0bbe-422e-b9b4-caab28fb52a4.png">
+
+<img width="1224" alt="arrayofdictionaries" src="https://user-images.githubusercontent.com/105934102/182010512-139fc37f-d1f3-4ed6-b60c-3e9cb95cf5a3.png">
