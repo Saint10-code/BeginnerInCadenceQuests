@@ -18,3 +18,9 @@
 1. <img width="1276" alt="array of birth" src="https://user-images.githubusercontent.com/105934102/182010507-4e7240ac-0bbe-422e-b9b4-caab28fb52a4.png">
 
 <img width="1224" alt="arrayofdictionaries" src="https://user-images.githubusercontent.com/105934102/182010512-139fc37f-d1f3-4ed6-b60c-3e9cb95cf5a3.png">
+
+# Day 3
+
+1. <img width="1274" alt="dic" src="https://user-images.githubusercontent.com/105934102/182011413-b5ae8799-dfce-4ef4-bbce-3ecff434458e.png">
+2. <img width="1272" alt="1" src="https://user-images.githubusercontent.com/105934102/182011780-bc7a4177-565c-49a1-91e4-1233ee7f5a4a.png">
+3. References can be useful in Cadence because it doesn't involve moving resources. So you will be able to refer to a set of data without moving it.
