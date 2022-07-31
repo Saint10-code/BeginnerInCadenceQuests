@@ -27,4 +27,7 @@
 
 # Day 4
 1. Resource interfaces can be used as a requirement/condition for you to access data OR as a way to expose specific things. 
-2. 
+2. <img width="1271" alt="test" src="https://user-images.githubusercontent.com/105934102/182018469-9f0beae9-7fcb-445a-8c80-45261a6a10e4.png">
+3. <img width="1278" alt="1" src="https://user-images.githubusercontent.com/105934102/182020096-b50aec56-83f4-4d1c-93d7-6811c2139fc5.png">
+<img width="1278" alt="2" src="https://user-images.githubusercontent.com/105934102/182020097-052d9979-b6ce-41fc-9381-e245646a17bc.png">
+
