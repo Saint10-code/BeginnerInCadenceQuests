@@ -24,3 +24,7 @@
 1. <img width="1274" alt="dic" src="https://user-images.githubusercontent.com/105934102/182011413-b5ae8799-dfce-4ef4-bbce-3ecff434458e.png">
 2. <img width="1272" alt="1" src="https://user-images.githubusercontent.com/105934102/182011780-bc7a4177-565c-49a1-91e4-1233ee7f5a4a.png">
 3. References can be useful in Cadence because it doesn't involve moving resources. So you will be able to refer to a set of data without moving it.
+
+# Day 4
+1. Resource interfaces can be used as a requirement/condition for you to access data OR as a way to expose specific things. 
+2. 
