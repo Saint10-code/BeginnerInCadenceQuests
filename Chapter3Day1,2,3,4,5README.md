@@ -42,11 +42,10 @@
 
 # Day 5
 
-1.  a: read scope = all; write scope = all
-    b: read scope = all; write scope = current & inner
-    c: read scope = current, inner, & containing contract; write scope = current & inner
-    d: read scope = current & inner; write scope = current & inner
 
-    publicFunc: current & inner
-    contractFunc: current & inner
-    privateFunc: current & inner
+
+
+a: read scope = 1,2,3,4; write scope = 1,2,3,4
+b: read scope = 1,2,3,4; write scope = 1,2,3
+c: read scope = 1,2,3 ; write scope = 1,2,3
+d: read scope = 1,2,3 ; write scope = 1
