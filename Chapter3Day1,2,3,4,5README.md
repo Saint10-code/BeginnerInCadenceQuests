@@ -37,3 +37,16 @@
 <img width="1278" alt="1" src="https://user-images.githubusercontent.com/105934102/182020096-b50aec56-83f4-4d1c-93d7-6811c2139fc5.png">
 <img width="1278" alt="2" src="https://user-images.githubusercontent.com/105934102/182020097-052d9979-b6ce-41fc-9381-e245646a17bc.png">
 
+
+
+
+# Day 5
+
+1.  a: read scope = all; write scope = all
+    b: read scope = all; write scope = current & inner
+    c: read scope = current, inner, & containing contract; write scope = current & inner
+    d: read scope = current & inner; write scope = current & inner
+
+    publicFunc: current & inner
+    contractFunc: current & inner
+    privateFunc: current & inner
