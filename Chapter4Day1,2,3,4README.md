@@ -1,4 +1,4 @@
-```cadence
+
 
 # Day 1 
 
@@ -21,7 +21,7 @@
 5. You wouldn't be able to save your data to my account because my data lives in the /storage/ section of my account. The worst that could happen is that a hacker could accidentally sign a transaction that is in the prepare phase of my account. We probably shouldn't put sign requests in the prepare phase, but in the execute phase. 
 
 6. 
-
+```cadence
 pub contract Basketball {
 
   pub resource NBA {
@@ -67,7 +67,7 @@ transaction() {
 
   }
 }
-
+```
 
 # Day 2
 
