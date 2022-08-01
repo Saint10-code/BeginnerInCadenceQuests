@@ -100,7 +100,7 @@ i.
 import Basketball from 0x03
     transaction() {
   prepare(signer: AuthAccount) {
-    signer.save(<- Stuff.createNBA(), to: /storage/MyNBAResource)
+    signer.save(<- NBA.createNBA(), to: /storage/MyNBAResource)
     signer.link<&Basketball.NBA{Basketball.INBA}>(/public/MyTestResource, target: /storage/MyTestResource)
   }
   execute {
@@ -109,7 +109,7 @@ import Basketball from 0x03
 
 
 ii.
-import Stuff from 0x03
+import Basketball from 0x03
 transaction(address: Address) {
   prepare(signer: AuthAccount) {
   }
