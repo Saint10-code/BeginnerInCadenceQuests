@@ -55,7 +55,7 @@ transaction() {
 }
 
 ii. 
-import Stuff from 0x04
+import Basketball from 0x04
 transaction() {
   prepare(signer: AuthAccount) {
     let nbaResource = signer.borrow<&Basketball.Test>(from: /storage/MyNBAResource)
