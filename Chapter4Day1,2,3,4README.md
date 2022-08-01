@@ -71,6 +71,11 @@ transaction() {
 
 # Day 2
 
+1. .link() links the resource to the public path. This means that anyone in public can read the name of our resource. 
+
+2. You can use a resource interfaces to expose a certain piece of information, then using link() to /public/ to expose whatever is in the resource interface to the public.
+
+
 
 # Day 3 
 
