@@ -58,7 +58,7 @@ ii.
 import Basketball from 0x04
 transaction() {
   prepare(signer: AuthAccount) {
-    let nbaResource = signer.borrow<&Basketball.Test>(from: /storage/MyNBAResource)
+    let nbaResource = signer.borrow<&Basketball.NBA>(from: /storage/MyNBAResource)
                           ?? panic
     log(nbaResource.name)
   }
@@ -80,7 +80,7 @@ pub contract Basketball {
   pub resource interface INBA {
     pub var name: String
   }
-  pub resource Test: ITest {
+  pub resource NBA: INBA {
     pub var name: String
 
     pub fun changeName(newName: String) {
@@ -101,7 +101,7 @@ import Basketball from 0x03
     transaction() {
   prepare(signer: AuthAccount) {
     signer.save(<- NBA.createNBA(), to: /storage/MyNBAResource)
-    signer.link<&Basketball.NBA{Basketball.INBA}>(/public/MyTestResource, target: /storage/MyTestResource)
+    signer.link<&Basketball.NBA{Basketball.INBA}>(/public/MyNBAResource, target: /storage/MyNBAResource)
   }
   execute {
   }
@@ -115,11 +115,11 @@ transaction(address: Address) {
   }
   execute {
     let publicCapability: Capability<&Basketball.NBA> =
-      getAccount(address).getCapability<&Basketball.NBA>(/public/MyTestResource)
+      getAccount(address).getCapability<&Basketball.NBA>(/public/MyNBAResource)
 
     // ERROR: "The capability doesn't exist or you did not 
     // specify the right type when you got the capability."
-    let nbaResource: &Basketball.Test = publicCapability.borrow() ?? panic
+    let nbaResource: &Basketball.NBA = publicCapability.borrow() ?? panic
     nbaResource.changeName(newName: "Kobe")
   }
 }
