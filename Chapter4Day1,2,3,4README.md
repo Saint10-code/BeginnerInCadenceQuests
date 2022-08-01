@@ -6,7 +6,7 @@
     Account Storage - container of data that lives within a certain path. (/storage/, /public/, /private/)
     
     
-2.  /storage/ - all of your data is here and only you can access this information. 
+2.  /storage/ - Only the account owner can access the data inside here.
     /public/ - data that is available to everyone. 
     /private/ - only available to the account owner and the person that the account owner gives access to. 
     
@@ -71,11 +71,69 @@ transaction() {
 
 # Day 2
 
-1. .link() links the resource to the public path. This means that anyone in public can read the name of our resource. 
+1. .link() allows you to link a resource to eithr a /public/ or /private/ path. 
+2. Resource interfaces allows you to access certain pieces of data and can restrict others. 
+3. 
 
-2. You can use a resource interfaces to expose a certain piece of information, then using link() to /public/ to expose whatever is in the resource interface to the public.
+pub contract Basketball {
+
+  pub resource interface INBA {
+    pub var name: String
+  }
+  pub resource Test: ITest {
+    pub var name: String
+
+    pub fun changeName(newName: String) {
+      self.name = newName
+    }
+    init() {
+      self.name = "Lebron"
+    }
+  }
+  pub fun createNBA(): @NBA {
+    return <- create NBA()
+  }
+}
 
 
+i.
+import Basketball from 0x03
+    transaction() {
+  prepare(signer: AuthAccount) {
+    signer.save(<- Stuff.createNBA(), to: /storage/MyNBAResource)
+    signer.link<&Basketball.NBA{Basketball.INBA}>(/public/MyTestResource, target: /storage/MyTestResource)
+  }
+  execute {
+  }
+}
+
+
+ii.
+import Stuff from 0x03
+transaction(address: Address) {
+  prepare(signer: AuthAccount) {
+  }
+  execute {
+    let publicCapability: Capability<&Basketball.NBA> =
+      getAccount(address).getCapability<&Basketball.NBA>(/public/MyTestResource)
+
+    // ERROR: "The capability doesn't exist or you did not 
+    // specify the right type when you got the capability."
+    let nbaResource: &Basketball.Test = publicCapability.borrow() ?? panic
+    nbaResource.changeName(newName: "Kobe")
+  }
+}
+
+iii.
+
+import Basketball from 0x03
+transaction() {
+  prepare(signer: AuthAccount) {
+    signer.link<&Basketball.NBA>(/public/MyNBAResource, target: /storage/MyNBAResource)
+  }
+  execute {
+  }
+}
 
 # Day 3 
 
