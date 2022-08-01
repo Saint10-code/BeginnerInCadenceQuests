@@ -55,6 +55,7 @@ transaction() {
 }
 
 ii. 
+```cadence
 import Basketball from 0x04
 transaction() {
   prepare(signer: AuthAccount) {
@@ -75,6 +76,8 @@ transaction() {
 2. Resource interfaces allows you to access certain pieces of data and can restrict others. 
 3. 
 
+```cadence
+
 pub contract Basketball {
 
   pub resource interface INBA {
@@ -94,9 +97,11 @@ pub contract Basketball {
     return <- create NBA()
   }
 }
-
+```
 
 i.
+```cadence
+
 import Basketball from 0x03
     transaction() {
   prepare(signer: AuthAccount) {
@@ -106,9 +111,12 @@ import Basketball from 0x03
   execute {
   }
 }
+```
 
 
 ii.
+```cadence
+
 import Basketball from 0x03
 transaction(address: Address) {
   prepare(signer: AuthAccount) {
@@ -123,8 +131,10 @@ transaction(address: Address) {
     nbaResource.changeName(newName: "Kobe")
   }
 }
+```
 
 iii.
+```cadence
 
 import Basketball from 0x03
 transaction() {
@@ -134,6 +144,7 @@ transaction() {
   execute {
   }
 }
+```
 
 # Day 3 
 1. We added a collection to a contract so we minimize the number of storage paths and because no one can mint an NFT for us, we have to do it ourselves. 
@@ -142,6 +153,8 @@ transaction() {
 
 
 # Day 4
+
+```cadence
 
 pub contract CryptoPoops {
   pub var totalSupply: UInt64
