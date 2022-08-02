@@ -11,7 +11,6 @@
 ```cadence
 pub contract BlooodPressureNFT {
 
-
 pub event NFTMinted(id: UInt64)
 
 pub resource NFT {
@@ -49,8 +48,10 @@ pub resource NFT {
 3. 
 
 
-```cadence
 
+//The contract interface:
+
+```cadence
   pub contract interface ITest {
   pub var number: Int
   
@@ -62,7 +63,6 @@ pub resource NFT {
       self.number == newNumber: "Didn't update the number to be the new number."
     }
   }
-
   pub resource interface IStuff {
     pub var favouriteActivity: String
   }
@@ -73,6 +73,8 @@ pub resource NFT {
 }
 ```
 
+// The Implementing Contract:
+```cadence
 pub contract Test {
   pub var number: Int
   
@@ -96,6 +98,7 @@ pub contract Test {
     self.number = 0
   }
 }
+```
 
 
 # Day 3
