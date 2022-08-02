@@ -97,6 +97,7 @@ pub contract Test {
     self.number = 0
   }
 }
+```
 
 # Day 3
 
