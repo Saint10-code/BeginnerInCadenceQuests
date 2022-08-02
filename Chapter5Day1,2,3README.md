@@ -46,7 +46,10 @@ pub resource NFT {
 1. Standards can benefit FLOW because it'll help developers recognize different contracts easier. 
 2. Rice with Chicken 
 
-3. ```cadence
+3. 
+
+
+```cadence
 
   pub contract interface ITest {
   pub var number: Int
@@ -69,7 +72,6 @@ pub resource NFT {
   }
 }
 ```
-```cadence
 
 pub contract Test {
   pub var number: Int
@@ -94,7 +96,7 @@ pub contract Test {
     self.number = 0
   }
 }
-```
+
 
 # Day 3
 
