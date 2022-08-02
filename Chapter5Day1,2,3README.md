@@ -38,3 +38,14 @@ pub resource NFT {
 4.  numberOne: Yes it will
     numberTwo: No it will not
     numberThree: No because you must specifiy the contract. self.number = 0
+    
+    
+    
+# Day 2
+
+1. Standards can benefit FLOW because it'll help developers recognize different contracts easier. 
+2. Rice with Chicken 
+3.  
+
+
+
