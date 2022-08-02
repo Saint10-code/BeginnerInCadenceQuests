@@ -67,7 +67,8 @@ pub resource NFT {
     pub var favouriteActivity: String
   }
 
-  pub resource Stuff {
+  //We have to specifically implement the ITest.Istuff within the Stuff resource. 
+  pub resource Stuff:IStuff {
     pub var favouriteActivity: String
   }
 }
@@ -82,11 +83,8 @@ pub contract Test {
     self.number = 5
   }
 
-  pub resource interface IStuff {
-    pub var favouriteActivity: String
-  }
-
-  pub resource Stuff: IStuff {
+//The contract interfacr specifies that we need to use ITest.Istuff.//
+  pub resource Stuff: ITest.IStuff {
     pub var favouriteActivity: String
 
     init() {
