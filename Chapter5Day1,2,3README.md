@@ -48,9 +48,6 @@ pub resource NFT {
 
 3. ```cadence
 
-The contract interface:
-
-
   pub contract interface ITest {
   pub var number: Int
   
@@ -71,8 +68,8 @@ The contract interface:
     pub var favouriteActivity: String
   }
 }
-
-The implementing contract:
+```
+```cadence
 
 pub contract Test {
   pub var number: Int
