@@ -136,12 +136,7 @@ pub contract CryptoPoops: NonFungibleToken {
       self.luckyNumber = _luckyNumber
     }
   }
-```
 
-//add resource interface that shows borrowAuthNFT
-  
-  ```cadence
-  
   pub resource interface ICryptoPoopsCollectionPublic{
     pub fun deposit(token: @NonFungibleToken.NFT)
     pub fun borrowAuthNFT(id: UInt64): &NFT
@@ -176,11 +171,9 @@ pub contract CryptoPoops: NonFungibleToken {
       let ref = (&self.ownedNFTs[id] as auth &NonFungibleToken.NFT?)!
       return ref as! &NFT
     }
-
     init() {
       self.ownedNFTs <- {}
     }
-
     destroy() {
       destroy self.ownedNFTs
     }
