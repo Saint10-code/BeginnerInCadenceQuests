@@ -136,8 +136,10 @@ pub contract CryptoPoops: NonFungibleToken {
     }
   }
 ```
-   //add resource interfact that shows borrowAuthNFT
-   ```cadence
+
+//add resource interface that shows borrowAuthNFT
+  
+  ```cadence
   
   pub resource interface ICryptoPoopsCollectionPublic{
     pub fun deposit(token: @NonFungibleToken.NFT)
@@ -200,8 +202,11 @@ pub contract CryptoPoops: NonFungibleToken {
     self.account.save(<- create Minter(), to: /storage/Minter)
   }
 }
+
 ```
+
 //Transaction to create a collection//
+
 ```cadence
 import CryptoPoops from 0x01
 import NonFungibleToken from 0x02
@@ -211,29 +216,32 @@ import NonFungibleToken from 0x02
 
 transaction() {
     prepare(signer: AuthAccount) {
-        acoun.save(<- CryptoPoops.createEmptyCollection(), to: /storage/MyCollection)
+        acoun.save(<- CryptoPoops.createEmptyCollection(), to: /storage/MyCryptoPoopCollection)
         acoun.link<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic,
                                             CryptoPoops.ICryptoPoopsCollectionPublic}>
-            (/public/MyCollection, target: /storage/MyCollection)
+            (/public/MyCryptoPoopCollection, target: /storage/MyCryptoPoopCollection)
     }
 }
-```
-//Transaction to mint the nft//
 
+//Transaction to mint the nft//
+```
 import CryptoPoops from 0x01
 import NonFungibleToken from 0x02
 
 transaction(receipent: Address, name: String, food: String, number: Int) {
 
   prepare(acct: AuthAccount) {
-    let mintnft = account.borrow<&CryptoPoops.Minter>(from: /storage/Minter) ?? panic("Nothing to mint here")
-    let publicReference = getAccount(receipent).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic}>() ?? panic ("This account does not have a collection.")
-
-    publicReference.deposit(token: <- nftMinter.createNFT(name: name, favouriteFood: food, luckyNumber: number))
-    }
-  execute {
-    log("You added a newly minted NFT~")
-  }
+    let minter = account.borrow<&CryptoPoops.Minter>(from: /storage/Minter) ?? panic("No Crypto Poop to mint here.")
+    let nft <- minter.createNFT(
+            name: name,
+            favouriteFood: favouriteFood,
+            luckyNumber: luckyNumber )
+            
+   let recipientsCollection = getAccount(recipient)
+            .getCapability(/public/MyCryptoPoopCollection)
+            .borrow<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic}>()
+            ?? panic("No Crypto Poop here.")
+        recipientsCollection.deposit(token: <- nft)
 }
 
 //Script to read metadata//
@@ -242,11 +250,11 @@ import CryptoPoops from 0x01
 import NonFungibleToken from 0x02
 
 pub fun main(acct: Address, id: UInt64): String {
-  let publicCollection = getAccount(accoun).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{CryptoPoops.ICryptoPoopsCollectionPublic}>() ?? panic("This account doesn't have a collection!")
+  let publicCryptoPoopCollection = getAccount(accoun).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{CryptoPoops.ICryptoPoopsCollectionPublic}>() ?? panic("No Crypto Poop here.")
 
- let nftIDs = publicCollection.getIDs()
+ let nftIDs = publicCryptoPoopCollection.getIDs()
     for id in nftIDs {
     
-  return publicCollection.borrowAuthNFT(id: id).luckyNumber
+  return publicCryptoPoopCollection.borrowAuthNFT(id: id).luckyNumber
 }
 ```
