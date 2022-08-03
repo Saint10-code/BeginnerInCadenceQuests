@@ -101,3 +101,6 @@ pub contract Test {
 
 # Day 3
 
+1. Force casting specifies the exact type of resource. This is beneficial for our collection because it ensures that only the sepcific type of NFT from a specific collection is deposited into our collection. 
+2. The auth reference allows us to read more metadata of a specific resource. We use this whenever we want to read more metadata that is not available to us initially and whenever we want to downcast a type to read a specific type of resource.
+3.
