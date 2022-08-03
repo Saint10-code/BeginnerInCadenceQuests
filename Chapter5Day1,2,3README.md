@@ -199,3 +199,39 @@ pub contract CryptoPoops: NonFungibleToken {
 //
 
 ```
+//Create a collection//
+
+```cadence
+import CryptoPoops from 0x01
+import NonFungibleToken from 0x02
+
+transaction {
+
+  prepare(acct: AuthAccount) {
+    acct.save(<-CryptoPoops.createEmptyCollection(), to: /storage/Collection)
+    acct.link<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic, CryptoPoops.ICollection}>(/public/Collection, target: /storage/Collection)
+    }
+  execute {
+    log("A collection has been created")
+  }
+}
+```
+//Deposit NFT into another account//
+
+```cadence
+import CryptoPoops from 0x01
+import NonFungibleToken from 0x02
+
+transaction(receipent: Address, name: String, food: String, number: Int) {
+
+  prepare(acct: AuthAccount) {
+    let nftMinter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter) ?? panic("There is no Minter her")
+    let publicReference = getAccount(receipent).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{NonFungibleToken.Collection}>() ?? panic ("There is no collection here")
+
+    publicReference.deposit(token: <- nftMinter.createNFT(name: name, favouriteFood: food, luckyNumber: number))
+    }
+  execute {
+    log("You added a newly minted NFT~")
+  }
+}
+```
