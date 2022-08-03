@@ -208,12 +208,9 @@ import NonFungibleToken from 0x02
 transaction {
 
   prepare(acct: AuthAccount) {
-    acct.save(<-CryptoPoops.createEmptyCollection(), to: /storage/Collection)
-    acct.link<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic, CryptoPoops.ICollection}>(/public/Collection, target: /storage/Collection)
+    signer.save(<-CryptoPoops.createEmptyCollection(), to: /storage/Collection)
+    signer.link<&CryptoPoops.Collection{NonFungibleToken.CollectionPublic, CryptoPoops.PoopsCollectionPublic}>(/public/Collection, target: /storage/MyCollection)
     }
-  execute {
-    log("A collection has been created")
-  }
 }
 ```
 //Deposit NFT into another account//
@@ -225,13 +222,10 @@ import NonFungibleToken from 0x02
 transaction(receipent: Address, name: String, food: String, number: Int) {
 
   prepare(acct: AuthAccount) {
-    let nftMinter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter)
+    let Minter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter)
     let publicReference = getAccount(receipent).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{NonFungibleToken.Collection}>()
 
     publicReference.deposit(token: <- nftMinter.createNFT(name: name, favouriteFood: food, luckyNumber: number))
     }
-  execute {
-    log("New NFT")
-  }
 }
 ```
