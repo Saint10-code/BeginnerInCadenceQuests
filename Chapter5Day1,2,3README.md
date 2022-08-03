@@ -225,13 +225,13 @@ import NonFungibleToken from 0x02
 transaction(receipent: Address, name: String, food: String, number: Int) {
 
   prepare(acct: AuthAccount) {
-    let nftMinter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter) ?? panic("There is no Minter her")
-    let publicReference = getAccount(receipent).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{NonFungibleToken.Collection}>() ?? panic ("There is no collection here")
+    let nftMinter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter)
+    let publicReference = getAccount(receipent).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{NonFungibleToken.Collection}>()
 
     publicReference.deposit(token: <- nftMinter.createNFT(name: name, favouriteFood: food, luckyNumber: number))
     }
   execute {
-    log("You added a newly minted NFT~")
+    log("New NFT")
   }
 }
 ```
