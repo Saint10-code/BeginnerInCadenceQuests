@@ -110,7 +110,7 @@ pub resource interface IStuff {
 2. The auth reference allows us to read more metadata of a specific resource. We use this whenever we want to read more metadata that is not available to us initially and whenever we want to downcast a type to read a specific type of resource.
 3.
 
-//Contract//
+//Contract & resource interface//
 
 ``` cadence
 import NonFungibleToken from 0x02
