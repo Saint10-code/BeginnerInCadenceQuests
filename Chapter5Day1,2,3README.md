@@ -106,6 +106,7 @@ pub contract Test {
 3.
 
 ```cadence
+//Contract//
 
 import NonFungibleToken from 0x02
 pub contract CryptoPoops: NonFungibleToken {
@@ -129,6 +130,13 @@ pub contract CryptoPoops: NonFungibleToken {
       self.favouriteFood = _favouriteFood
       self.luckyNumber = _luckyNumber
     }
+  }
+  
+   pub resource interface ICollection{
+    pub fun deposit(token: @NonFungibleToken.NFT)
+    pub fun getIDs(): [UInt64]
+    pub fun borrowNFT(id: UInt64): &NonFungibleToken.NFT
+    pub fun borrowAuthNFT(id: UInt64): &NFT
   }
 
   pub resource Collection: NonFungibleToken.Provider, NonFungibleToken.Receiver, NonFungibleToken.CollectionPublic {
@@ -187,9 +195,6 @@ pub contract CryptoPoops: NonFungibleToken {
   }
 }
 
-
-
-
-
+//
 
 ```
