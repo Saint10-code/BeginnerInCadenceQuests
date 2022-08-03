@@ -111,6 +111,7 @@ pub resource interface IStuff {
 3.
 
 //Contract//
+
 ``` cadence
 import NonFungibleToken from 0x02
 
@@ -202,12 +203,13 @@ pub contract CryptoPoops: NonFungibleToken {
     self.account.save(<- create Minter(), to: /storage/Minter)
   }
 }
-
 ```
+
 
 //Transaction to create a collection//
 
 ```cadence
+
 import CryptoPoops from 0x01
 import NonFungibleToken from 0x02
 
@@ -222,9 +224,11 @@ transaction() {
             (/public/MyCryptoPoopCollection, target: /storage/MyCryptoPoopCollection)
     }
 }
+```
 
 //Transaction to mint the nft//
-```
+
+```cadence
 import CryptoPoops from 0x01
 import NonFungibleToken from 0x02
 
@@ -243,9 +247,12 @@ transaction(receipent: Address, name: String, food: String, number: Int) {
             ?? panic("No Crypto Poop here.")
         recipientsCollection.deposit(token: <- nft)
 }
+```
 
 //Script to read metadata//
+
 ```cadence
+
 import CryptoPoops from 0x01
 import NonFungibleToken from 0x02
 
