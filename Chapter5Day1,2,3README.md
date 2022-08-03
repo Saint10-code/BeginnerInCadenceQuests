@@ -252,9 +252,6 @@ import NonFungibleToken from 0x02
 pub fun main(acct: Address, id: UInt64): String {
   let publicCryptoPoopCollection = getAccount(accoun).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{CryptoPoops.ICryptoPoopsCollectionPublic}>() ?? panic("No Crypto Poop here.")
 
- let nftIDs = publicCryptoPoopCollection.getIDs()
-    for id in nftIDs {
-    
   return publicCryptoPoopCollection.borrowAuthNFT(id: id).luckyNumber
 }
 ```
