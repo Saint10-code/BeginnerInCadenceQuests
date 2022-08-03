@@ -213,19 +213,3 @@ transaction {
     }
 }
 ```
-//Deposit NFT into another account//
-
-```cadence
-import CryptoPoops from 0x01
-import NonFungibleToken from 0x02
-
-transaction(receipent: Address, name: String, food: String, number: Int) {
-
-  prepare(acct: AuthAccount) {
-    let Minter = acct.borrow<&CryptoPoops.Minter>(from: /storage/Minter)
-    let publicReference = getAccount(receipent).getCapability(/public/Collection).borrow<&CryptoPoops.Collection{NonFungibleToken.Collection}>()
-
-    publicReference.deposit(token: <- nftMinter.createNFT(name: name, favouriteFood: food, luckyNumber: number))
-    }
-}
-```
