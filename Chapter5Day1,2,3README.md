@@ -113,7 +113,7 @@ pub resource interface IStuff {
 //Contract & resource interface//
 
 ``` cadence
-import NonFungibleToken from 0x02
+import NonFungibleToken from "./NonFungibleToken.cdc
 
 pub contract CryptoPoops: NonFungibleToken {
   pub var totalSupply: UInt64
