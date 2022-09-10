@@ -1,5 +1,9 @@
-```cadence 
+DAY 1 
 
-<img width="1195" alt="flowbird 1" src="https://user-images.githubusercontent.com/105934102/189483420-ab0f93fd-6539-4bf4-b08c-916af038e5dc.png">
-<img width="1202" alt="flowbirds 2" src="https://user-images.githubusercontent.com/105934102/189483422-cbc999a1-10c1-43b1-9bf1-e3f89f4f0950.png">
-<img width="1197" alt="flowbirds 3" src="https://user-images.githubusercontent.com/105934102/189483423-19db03bc-f9b9-49ae-9313-635ab47d4e76.png">
+
+https://github.com/Saint10-code/Quest-Submissions-Emerald-City/blob/043c678b935cb1e3128c0d2615b645abc9cb7218/flowbird%201.png
+
+https://github.com/Saint10-code/Quest-Submissions-Emerald-City/blob/043c678b935cb1e3128c0d2615b645abc9cb7218/flowbirds%202.png
+
+
+https://github.com/Saint10-code/Quest-Submissions-Emerald-City/blob/043c678b935cb1e3128c0d2615b645abc9cb7218/flowbirds%203.png
