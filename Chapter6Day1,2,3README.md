@@ -32,4 +32,15 @@ Read the ID of an NFT minted to an account. flow scripts execute ./CST/Scripts/G
 
 <img width="1055" alt="3" src="https://user-images.githubusercontent.com/105934102/190846027-dbc5dd72-568c-4d95-b8f3-84e3360e578c.png">
 
-4. 
+4. Read the metadata od Devonte Graham's TopShot with the playId of 21
+<img width="1153" alt="devonte" src="https://user-images.githubusercontent.com/105934102/190852975-52a5df70-1121-474c-83ba-baeb8525c174.png">
+
+
+
+5. Got the total supply of the Goated Goats collection. 
+
+<img width="916" alt="return supply" src="https://user-images.githubusercontent.com/105934102/190852221-761d9b42-8e88-498d-8f51-50bf92a14929.png">
+
+6. read ID's from someone's goated goats collection
+<img width="1139" alt="goates" src="https://user-images.githubusercontent.com/105934102/190851591-ef47ed11-91bb-4ec0-9fd1-b0660e0b6a35.png">
+
